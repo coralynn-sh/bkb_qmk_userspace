@@ -59,7 +59,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CM_RWRD  C(KC_RGHT)
 
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
-const uint16_t PROGMEM dragscroll_combo[] = {KC_X, KC_S, COMBO_END};
+const uint16_t PROGMEM dragscroll_combo[] = {KC_X, KC_C, KC_V, COMBO_END};
 combo_t key_combos[] = {
     COMBO(boot_combo, QK_BOOT),
     COMBO(dragscroll_combo, DRGSCRL),
