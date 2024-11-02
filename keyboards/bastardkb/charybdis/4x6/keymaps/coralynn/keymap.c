@@ -59,8 +59,10 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CM_RWRD  C(KC_RGHT)
 
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
+const uint16_t PROGMEM dragscroll_combo[] = {KC_X, KC_S, COMBO_END};
 combo_t key_combos[] = {
     COMBO(boot_combo, QK_BOOT),
+    COMBO(dragscroll_combo, DRGSCRL),
 };
 
 // clang-format off
@@ -73,9 +75,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
         KC_ESC,    KC_A,    KC_R,    KC_S,    KC_T,    KC_D,       KC_H,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       CM_META,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, DRGSCRL,
+       CM_META,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, CM_CTRL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                   CM_SPC, KC_LSFT, MS_BTN2,    CM_CTRL,  CM_SYM,
+                                  KC_LSFT,  CM_SPC, MS_BTN2,    XXXXXXX,  CM_SYM,
                                            MS_BTN1, MS_BTN3,    KC_BSPC
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
