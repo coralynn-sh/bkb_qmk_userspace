@@ -28,6 +28,8 @@
 
 /* Charybdis-specific features. */
 
+#define CHARYBDIS_DRAGSCROLL_DPI 50
+
 #ifdef POINTING_DEVICE_ENABLE
 // #define CHARYBDIS_DRAGSCROLL_REVERSE_Y
 // Automatically enable the pointer layer when moving the trackball.  See also:
