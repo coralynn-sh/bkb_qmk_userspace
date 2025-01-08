@@ -28,6 +28,8 @@
 
 /* Charybdis-specific features. */
 
+#define CHARYBDIS_MINIMUM_DEFAULT_DPI 250
+
 #define CHARYBDIS_DRAGSCROLL_DPI 50
 #define CHARYBDIS_DRAGSCROLL_REVERSE_X
 
