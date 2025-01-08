@@ -60,9 +60,11 @@ static uint16_t auto_pointer_layer_timer = 0;
 
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
 const uint16_t PROGMEM dragscroll_combo[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM shift_combo[] = {KC_Z, KC_X, COMBO_END};
 combo_t key_combos[] = {
     COMBO(boot_combo, QK_BOOT),
     COMBO(dragscroll_combo, DRGSCRL),
+    COMBO(shift_combo, KC_LSFT),
 };
 
 // clang-format off
