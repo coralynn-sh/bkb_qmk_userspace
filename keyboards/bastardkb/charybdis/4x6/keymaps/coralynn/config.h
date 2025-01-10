@@ -33,6 +33,8 @@
 #define CHARYBDIS_DRAGSCROLL_DPI 50
 #define CHARYBDIS_DRAGSCROLL_REVERSE_X
 
+#define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
+
 #ifdef POINTING_DEVICE_ENABLE
 // #define CHARYBDIS_DRAGSCROLL_REVERSE_Y
 // Automatically enable the pointer layer when moving the trackball.  See also:

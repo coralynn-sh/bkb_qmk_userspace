@@ -58,6 +58,14 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CM_LWRD  C(KC_LEFT)
 #define CM_RWRD  C(KC_RGHT)
 
+enum unicode_names {
+    DEG,
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [DEG] = 0x00B0,
+};
+
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
 const uint16_t PROGMEM dragscroll_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM shift_combo[] = {KC_Z, KC_X, COMBO_END};
@@ -79,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        CM_META,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, CM_CTRL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  KC_LSFT,  CM_SPC, MS_BTN2,    XXXXXXX,  CM_SYM,
+                                  KC_LSFT,  CM_SPC, MS_BTN2,    UM(DEG),  CM_SYM,
                                            MS_BTN1, MS_BTN3,    KC_BSPC
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
