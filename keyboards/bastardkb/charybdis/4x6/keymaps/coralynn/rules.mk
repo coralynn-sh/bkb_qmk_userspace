@@ -1,2 +1,4 @@
 COMBO_ENABLE = yes
 MOUSEKEY_ENABLE = yes
+STENO_ENABLE = yes
+STENO_PROTOCOL = geminipr

@@ -24,6 +24,7 @@ enum charybdis_keymap_layers {
     LAYER_BASE = 0,
     LAYER_SYMBOL,
     LAYER_CONTROL,
+    LAYER_STENO,
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
@@ -57,6 +58,8 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CM_ENTR  MT(MOD_LSFT, KC_ENT)
 #define CM_LWRD  C(KC_LEFT)
 #define CM_RWRD  C(KC_RGHT)
+#define CM_STEN  TO(LAYER_STENO)
+#define CM_BASE  TO(LAYER_BASE)
 
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
 const uint16_t PROGMEM dragscroll_combo[] = {KC_C, KC_V, COMBO_END};
@@ -79,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        CM_META,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, CM_CTRL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  KC_LSFT,  CM_SPC, MS_BTN2,    XXXXXXX,  CM_SYM,
+                                  KC_LSFT,  CM_SPC, MS_BTN2,    CM_STEN,  CM_SYM,
                                            MS_BTN1, MS_BTN3,    KC_BSPC
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
@@ -114,6 +117,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
+  [LAYER_STENO] = LAYOUT(
+  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
+       XXXXXXX,  STN_N1,  STN_N2,  STN_N3,  STN_N4,  STN_N5,     STN_N6,  STN_N7,  STN_N8,  STN_N9,  STN_NA, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX,  STN_S1,  STN_TL,  STN_PL,  STN_HL, STN_ST1,    STN_ST3,  STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX,  STN_S2,  STN_KL,  STN_WL,  STN_RL, STN_ST2,    STN_ST4,  STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
+                                    STN_A,   STN_O, XXXXXXX,    CM_BASE,   STN_U,
+                                           XXXXXXX, XXXXXXX,      STN_E
+  //                            ╰───────────────────────────╯ ╰──────────────────╯
+  ),
 };
 // clang-format on
 
