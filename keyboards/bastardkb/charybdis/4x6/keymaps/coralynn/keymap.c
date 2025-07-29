@@ -66,10 +66,12 @@ static uint16_t auto_pointer_layer_timer = 0;
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
 const uint16_t PROGMEM dragscroll_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM shift_combo[] = {KC_Z, KC_X, COMBO_END};
+const uint16_t PROGMEM steno_combo[] = {KC_W, KC_F, KC_U, KC_Y, COMBO_END};
 combo_t key_combos[] = {
     COMBO(boot_combo, QK_BOOT),
     COMBO(dragscroll_combo, DRGSCRL),
     COMBO(shift_combo, KC_LSFT),
+    COMBO(steno_combo, TO(LAYER_STENO)),
 };
 
 // clang-format off
@@ -123,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX,  STN_N1,  STN_N2,  STN_N3,  STN_N4,  STN_N5,     STN_N6,  STN_N7,  STN_N8,  STN_N9,  STN_NA, XXXXXXX,
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_ESC, XXXXXXX,    KC_BSPC, XXXXXXX,  KC_ENT, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        CM_BASE,  STN_S1,  STN_TL,  STN_PL,  STN_HL, STN_ST1,    STN_ST3,  STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
