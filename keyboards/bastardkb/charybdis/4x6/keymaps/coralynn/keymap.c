@@ -53,13 +53,15 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CM_META  OSM(MOD_LGUI)
 #define CM_CTRL  OSM(MOD_LCTL)
 #define CM_ALT   OSM(MOD_LALT)
-#define CM_SYM   OSL(LAYER_SYMBOL)
+#define CM_SYM   LT(LAYER_SYMBOL, KC_ENT)
 #define CM_SPC   LT(LAYER_CONTROL, KC_SPC)
 #define CM_ENTR  MT(MOD_LSFT, KC_ENT)
 #define CM_LWRD  C(KC_LEFT)
 #define CM_RWRD  C(KC_RGHT)
 #define CM_STEN  TO(LAYER_STENO)
 #define CM_BASE  TO(LAYER_BASE)
+#define CM_UP    LCTL(KC_U)
+#define CM_DOWN  LCTL(KC_D)
 
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
 const uint16_t PROGMEM dragscroll_combo[] = {KC_C, KC_V, COMBO_END};
@@ -97,18 +99,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______,  KC_DLR,    KC_1,    KC_2,    KC_3, KC_QUES,    KC_EXLM, KC_LBRC, KC_RBRC, KC_AMPR, KC_ASTR, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  CM_ENTR, KC_LABK, KC_RABK,    XXXXXXX, _______,
+                                  _______, KC_LABK, KC_RABK,    XXXXXXX, _______,
                                            _______, _______,    _______
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
   [LAYER_CONTROL] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       KC_BRMD, KC_BRMU, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLEP,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
+       KC_BRMD, KC_BRMU,  KC_F14,  KC_F15, XXXXXXX, KC_SLEP,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX,  KC_F22,  KC_F23,  KC_F24, XXXXXXX,    XXXXXXX, CM_LWRD,   KC_UP, CM_RWRD, XXXXXXX, XXXXXXX,
+       XXXXXXX, XXXXXXX,  KC_F22,  KC_F23,  KC_F24,   CM_UP,    XXXXXXX, CM_LWRD,   KC_UP, CM_RWRD, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX,  KC_F19,  KC_F20,  KC_F21, XXXXXXX,    KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, XXXXXXX,
+       XXXXXXX, XXXXXXX,  KC_F19,  KC_F20,  KC_F21, CM_DOWN,    KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, XXXXXXX,  KC_F16,  KC_F17,  KC_F18, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
