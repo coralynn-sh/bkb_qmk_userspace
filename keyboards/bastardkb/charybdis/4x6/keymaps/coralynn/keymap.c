@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        CM_META,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, CM_CTRL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  KC_LSFT,  CM_SPC, MS_BTN2,    CM_STEN,  CM_SYM,
+                                  KC_LSFT,  CM_SPC, MS_BTN2,    KC_LALT,  CM_SYM,
                                            MS_BTN1, MS_BTN3,    KC_BSPC
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
