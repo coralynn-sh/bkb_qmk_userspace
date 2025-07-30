@@ -62,6 +62,8 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CM_BASE  TO(LAYER_BASE)
 #define CM_UP    LCTL(KC_U)
 #define CM_DOWN  LCTL(KC_D)
+#define CM_SLMR  LCTL(KC_PPLS)
+#define CM_SLLS  LCTL(KC_PMNS)
 
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
 const uint16_t PROGMEM dragscroll_combo[] = {KC_C, KC_V, COMBO_END};
@@ -116,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX,  KC_F19,  KC_F20,  KC_F21, CM_DOWN,    KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, XXXXXXX,  KC_F16,  KC_F17,  KC_F18, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       _______, XXXXXXX,  KC_F16,  KC_F17,  KC_F18, XXXXXXX,    XXXXXXX, CM_SLLS, CM_SLMR, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, XXXXXXX, _______,    XXXXXXX, XXXXXXX,
                                            _______, _______,    _______
