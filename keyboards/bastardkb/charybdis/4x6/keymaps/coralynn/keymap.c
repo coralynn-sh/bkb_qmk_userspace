@@ -71,7 +71,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CM_SOLO  DF(LAYER_SOLO_L)
 #define CM_NORM  DF(LAYER_BASE)
 #define CM_SSWP  LT(LAYER_SOLO_R, KC_SPC)
-#define CM_NUMS  MO(LAYER_SOLO_N)
+#define CM_NUMS  LT(LAYER_SOLO_N, KC_BSPC)
 
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
 const uint16_t PROGMEM dragscroll_combo[] = {KC_C, KC_V, COMBO_END};
@@ -169,7 +169,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        XXXXXXX,  KC_GRV, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-        KC_TAB, KC_SCLN,    KC_W,    KC_U,    KC_L,    KC_J,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_TAB, KC_SCLN,    KC_Y,    KC_U,    KC_L,    KC_J,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
         KC_ESC,    KC_O,    KC_I,    KC_E,    KC_N,    KC_H,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
@@ -184,7 +184,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9, KC_BSPC,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX,    KC_4,    KC_5,    KC_6,    KC_0,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
