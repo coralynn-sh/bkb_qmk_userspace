@@ -43,3 +43,4 @@
 
 #undef MASTER_RIGHT
 #define MASTER_LEFT
+#define ONESHOT_TIMEOUT 1500
