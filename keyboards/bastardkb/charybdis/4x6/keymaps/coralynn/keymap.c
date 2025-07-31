@@ -25,6 +25,9 @@ enum charybdis_keymap_layers {
     LAYER_SYMBOL,
     LAYER_CONTROL,
     LAYER_STENO,
+    LAYER_SOLO_L,
+    LAYER_SOLO_R,
+    LAYER_SOLO_N,
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
@@ -65,17 +68,24 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CM_SLMR  LCTL(KC_PPLS)
 #define CM_SLLS  LCTL(KC_PMNS)
 
+#define CM_SOLO  DF(LAYER_SOLO_L)
+#define CM_NORM  DF(LAYER_BASE)
+#define CM_SSWP  LT(LAYER_SOLO_R, KC_SPC)
+#define CM_NUMS  MO(LAYER_SOLO_N)
+
 const uint16_t PROGMEM boot_combo[] = {KC_Q, KC_B, KC_T, COMBO_END};
 const uint16_t PROGMEM dragscroll_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM shift_combo[] = {KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM alt_combo[] = {KC_DOT, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM steno_combo[] = {KC_W, KC_F, KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM solo_combo[] = {KC_GRV, KC_Z, COMBO_END};
 combo_t key_combos[] = {
     COMBO(boot_combo, QK_BOOT),
     COMBO(dragscroll_combo, DRGSCRL),
     COMBO(shift_combo, KC_LSFT),
     COMBO(alt_combo, KC_LALT),
     COMBO(steno_combo, TO(LAYER_STENO)),
+    COMBO(solo_combo, CM_SOLO),
 };
 
 // clang-format off
@@ -136,6 +146,51 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        XXXXXXX,  STN_S2,  STN_KL,  STN_WL,  STN_RL, STN_ST2,    STN_ST4,  STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                    MS_BTN2,  STN_A,   STN_O,      STN_E,   STN_U,
+                                           _______, _______,    XXXXXXX
+  //                            ╰───────────────────────────╯ ╰──────────────────╯
+  ),
+
+  [LAYER_SOLO_L] = LAYOUT(
+  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, CM_NORM, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+        KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+        KC_ESC,    KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       CM_META,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
+                                  KC_LSFT, CM_SSWP, CM_NUMS,    XXXXXXX, XXXXXXX,
+                                            CM_ALT, CM_CTRL,    XXXXXXX
+  //                            ╰───────────────────────────╯ ╰──────────────────╯
+  ),
+
+  [LAYER_SOLO_R] = LAYOUT(
+  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
+       XXXXXXX,  KC_GRV, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+        KC_TAB, KC_SCLN,    KC_W,    KC_U,    KC_L,    KC_J,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+        KC_ESC,    KC_O,    KC_I,    KC_E,    KC_N,    KC_H,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX, KC_SLSH,  KC_DOT, KC_COMM,    KC_M,    KC_K,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
+                                  _______, _______, _______,    XXXXXXX, XXXXXXX,
+                                           _______, _______,    XXXXXXX
+  //                            ╰───────────────────────────╯ ╰──────────────────╯
+  ),
+
+  [LAYER_SOLO_N] = LAYOUT(
+  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX, XXXXXXX,    KC_4,    KC_5,    KC_6,    KC_0,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX, XXXXXXX,    KC_1,    KC_2,    KC_3, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
+                                  _______, _______, _______,    XXXXXXX, XXXXXXX,
                                            _______, _______,    XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
