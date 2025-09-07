@@ -152,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_SOLO_L] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       XXXXXXX,  KC_GRV, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT,    XXXXXXX, XXXXXXX, XXXXXXX, CM_NORM, XXXXXXX, XXXXXXX,
+       XXXXXXX,  KC_GRV, XXXXXXX, MS_WHLD, MS_WHLU, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, CM_NORM, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
         KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
