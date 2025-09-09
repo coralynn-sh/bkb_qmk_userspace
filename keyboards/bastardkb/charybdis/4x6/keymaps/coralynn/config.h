@@ -33,6 +33,10 @@
 #define CHARYBDIS_DRAGSCROLL_DPI 50
 #define CHARYBDIS_DRAGSCROLL_REVERSE_X
 
+#define MOUSEKEY_WHEEL_DELAY 100
+#define MOUSEKEY_WHEEL_INTERVAL 100
+#define MOUSEKEY_WHEEL_MAX_SPEED 1
+
 #ifdef POINTING_DEVICE_ENABLE
 // #define CHARYBDIS_DRAGSCROLL_REVERSE_Y
 // Automatically enable the pointer layer when moving the trackball.  See also:
